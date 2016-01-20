@@ -32,29 +32,48 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     controller: 'AppCtrl'
   })
 
-  .state('app.search', {
-    url: '/search',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/search.html'
-      }
-    }
-  })
-
-  .state('app.browse', {
-      url: '/browse',
+  .state('app.about', {
+      url: '/about',
       views: {
         'menuContent': {
-          templateUrl: 'templates/browse.html'
+          templateUrl: 'templates/about.html',
+          controller: 'aboutCtrl'
         }
       }
     })
-    .state('app.playlists', {
-      url: '/playlists',
+    .state('app.home', {
+      url: '/home',
       views: {
         'menuContent': {
-          templateUrl: 'templates/playlists.html',
-          controller: 'PlaylistsCtrl'
+          templateUrl: 'templates/home.html',
+          controller: 'homeCtrl'
+        }
+      }
+    })
+  .state('app.profile', {
+      url: '/profile',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/profile.html',
+          controller: 'profileCtrl'
+        }
+      }
+    })
+  .state('app.wallet', {
+      url: '/wallet',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/wallet.html',
+          controller: 'walletCtrl'
+        }
+      }
+    })
+  .state('app.customercare', {
+      url: '/customercare',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/customercare.html',
+          controller: 'customercareCtrl'
         }
       }
     })
@@ -69,5 +88,5 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     }
   });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
+  $urlRouterProvider.otherwise('/app/home');
 });
